@@ -1,0 +1,359 @@
+<!-- Sources: https://codepen.io/freeCodeCamp/pen/RKRbwL
+Responsive navBar: https://itnext.io/how-to-build-a-responsive-navbar-using-flexbox-and-javascript-eb0af24f19bf 
+Logo AlterEgo: https://alteregodrinkandfood-torino.business.site/
+-->
+
+<!DOCTYPE html>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<script src="https://kit.fontawesome.com/c9cd15f773.js" crossorigin="anonymous"></script>
+
+<!-- Center the description section when mobile -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Alter Ego Sweater</title>
+</head>
+
+<body>
+  <main>
+
+    <header id="header">
+      <nav class="navbar" id="nav-bar">
+        <img id="header-img" src="./alterEgoLogo_transparent.png" alt="alterEgoLogo">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+          <i class="fas fa-bars"></i>
+        </span>
+        <ul class="main-nav" id="js-menu">
+          <li>
+            <a href="#features" class="nav-link">Features</a>
+          </li>
+          <li>
+            <a href="#videoSection" class="nav-link">Product Video</a>
+          </li>
+          <li>
+            <a href="#price" class="nav-link">Pricing</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="videoSection" class="flex-center">
+      <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/wyHI3IrJOR8" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    <section class="middle">
+      <h1 id="title" class="text-center">Alter Ego Sweatshirt</h1>
+      <h3 id="description" class="text-center">Sign up for the exclusive sweater of the coolest cocktail bar of Turin
+      </h3>
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <input id="email" name="email" type="email" placeholder="Enter your email" required>
+        <br>
+        <input class="btn" id="submit" type="submit" value="SIGN UP">
+      </form>
+    </section>
+
+    <section id="features">
+
+      <div class="container">
+
+        <div class="icon">
+          <i class="fas fa-2x fa-star"></i>
+        </div>
+        <div class="desc">
+          <h2>Premium Look</h2>
+          <p>
+            Fashionable and athletic look to impress your friends!
+          </p>
+        </div>
+
+
+
+        <div class="icon">
+          <i class="fab fa-2x fa-cotton-bureau"></i>
+        </div>
+        <div class="desc">
+          <h2>Comfort</h2>
+          <p>
+            Warm and comfortable sweater made from 100% premium cotton.
+          </p>
+        </div>
+
+
+
+        <div class="icon">
+          <i class="fa fa-2x fa-truck"></i>
+        </div>
+        <div class="desc">
+          <h2>Direct Pick-Up</h2>
+          <p>
+            Pick-up directly from Alter Ego cocktail bar and enjoy a drink from us!
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="price">
+      <div class="container">
+        <div class="product">
+          <div class="color">
+            <h2>Grey</h2>
+          </div>
+          <div class="center">
+            <h3>$50</h3>
+            <p> For the more adventurous person</p>
+            <button class="btn text-center">SELECT</button>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="color">
+            <h2>White</h2>
+          </div>
+          <div class="center">
+            <h3>$50</h3>
+            <p>For the more adventurous person</p>
+            <button class="btn text-center">SELECT</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+</body>
+
+<style>
+  /* Global styling */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+  }
+
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  /* Header and navbar*/
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  header {
+    padding-bottom: 100px;
+  }
+
+  .navbar {
+    height: 70px;
+    font-size: 18px;
+    background-image: linear-gradient(260deg, #2c3e50 0%, #bdc3c7 100%);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .main-nav {
+    list-style-type: none;
+    display: none;
+  }
+
+  .nav-link,
+  .logo {
+    text-decoration: none;
+    color: rgb(192, 192, 192);
+  }
+
+  .main-nav li {
+    text-align: center;
+    margin: 15px auto;
+  }
+
+  #header-img {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 20px;
+
+  }
+
+  .navbar-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+  }
+
+  .active {
+    display: block;
+  }
+
+  .middle {
+    padding-top: 2rem;
+    line-height: 1.3;
+  }
+
+  /* Desktop navbar layout  */
+  @media screen and (min-width: 768px) {
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .navbar {
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 0;
+      height: 70px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .main-nav {
+      display: flex;
+      margin-right: 30px;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    .main-nav li {
+      margin: 0;
+    }
+
+    .nav-link {
+      margin-left: 40px;
+    }
+
+    .logo {
+      margin-top: 0;
+    }
+
+    .navbar-toggle {
+      display: none;
+    }
+
+    .logo:hover,
+    .nav-link:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+
+  /* Middle section and form */
+
+  .middle {
+    text-align: center;
+  }
+
+  .btn {
+    margin-top: 12px;
+    padding: 0 10px;
+    height: 30px;
+    font-size: 1rem;
+    font-weight: 800;
+    border: 3px black solid;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    color: white;
+    background-color: green;
+    transition: background-color 1s;
+  }
+
+  #email {
+    margin-top: 12px;
+    max-width: 270px;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  /* Features  */
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .color {
+    background-color: #ddd;
+    color: black;
+    padding: 10px 0;
+    width: 100%;
+    font-weight: 700;
+  }
+
+  .icon {
+    padding: 1rem;
+  }
+
+  /* Price section */
+
+  .product {
+    text-align: center;
+    border: 1px solid;
+    margin-right: 2rem;
+  }
+
+  .center {
+    margin: auto;
+    padding: 0.5rem;
+  }
+
+  /* Single column for mobile */
+  @media screen and (max-width: 550px) {
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .product {
+      line-height: 1.5;
+      margin-top: 2rem;
+    }
+
+    #videoSection {
+      margin-top: 3rem;
+    }
+  }
+</style>
+
+<script>
+  let mainNav = document.getElementById("js-menu");
+  let navBarToggle = document.getElementById("js-navbar-toggle");
+
+  navBarToggle.addEventListener("click", function () {
+    mainNav.classList.toggle("active");
+  });
+
+</script>
+
+</html>
